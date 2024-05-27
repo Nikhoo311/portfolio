@@ -1,24 +1,32 @@
+import { motion } from "framer-motion";
+
 const variants = {
     open: {
         transition: {
-            staggeredChildren: 0.1
+            staggerChildren: 0.1
         }
     },
     closed: {
         transition: {
-            staggeredChildren: 0.05,
-            staggeredDirection: -1
+            staggerChildren: 0.05,
+            staggerDirection: -1
         }
     }
 }
 
+const itemVariants = {
+    open: {
+        y: 0,
+        opacity: 1
+    },
+    closed: {
+        y: 50,
+        opacity: 0
+    }
+}
+
 const Links = () => {
-    const items = [
-        "Acceuil",
-        "Compétences",
-        "Projets",
-        "Contact"
-    ]
+    const items = ["Acceuil", "Compétences", "Projets", "Contact"]
 
     function replaceAccent(s){
         let r = s.toLowerCase();
@@ -39,10 +47,10 @@ const Links = () => {
     }
 
     return (
-        <div className="links">{items.map(item => {
+        <motion.div className="links" variants={variants}>{items.map(item => {
             const formatedItem = replaceAccent(item);
-            return <a href={`#${formatedItem}`} key={item}>{item}</a>
-        })}</div>
+            return <motion.a href={`#${formatedItem}`} key={item} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>{item}</motion.a>
+        })}</motion.div>
     )
 }
 export default Links;

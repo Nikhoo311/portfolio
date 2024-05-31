@@ -46,8 +46,8 @@ const Hero = () => {
                     <motion.h2 variants={textVariants}>FONTAINE Nicolas</motion.h2>
                     <motion.h1 variants={textVariants}>Développeur Web</motion.h1>
                     <motion.div variants={textVariants} className="buttons">
-                        <motion.button variants={textVariants}>Voir mon dernier travail</motion.button>
-                        <motion.button className="btn-contact" variants={textVariants}>Contact</motion.button>
+                        <motion.a variants={textVariants}>Voir mon dernier travail</motion.a>
+                        <motion.a href="#contact" className="btn-contact" variants={textVariants}>Contact</motion.a>
                     </motion.div>
                     <motion.img variants={textVariants} src="/scroll.png" alt="" animate="scrollButton"/>
                 </motion.div>

@@ -3,6 +3,7 @@
     overflow: hidden;
     background: linear-gradient(180deg, #0c0c1d, #111132);
     position: relative;
+    user-select: none;
 
     .wrapper {
         max-width: 1366px;
@@ -31,7 +32,7 @@
                 width: 50px;
             }
 
-            button {
+            a {
                 padding: 20px;
                 border: 1px solid #ffffff;
                 border-radius: 10px;
@@ -72,5 +73,6 @@
         color: #ffffff09;
         width: 50%;
         font-weight: bold;
+        pointer-events: none;
     }
 }

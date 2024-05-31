@@ -25,7 +25,7 @@ const itemVariants = {
     }
 }
 
-const Links = () => {
+const Links = ({setOpen}) => {
     const items = ["Acceuil", "Compétences", "Projets", "Contact"]
 
     function replaceAccent(s){
@@ -49,7 +49,7 @@ const Links = () => {
     return (
         <motion.div className="links" variants={variants}>{items.map(item => {
             const formatedItem = replaceAccent(item);
-            return <motion.a href={`#${formatedItem}`} key={item} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>{item}</motion.a>
+            return <motion.a onClick={() => setOpen((prev) => !prev)} href={`#${formatedItem}`} key={item} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>{item}</motion.a>
         })}</motion.div>
     )
 }

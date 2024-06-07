@@ -26,7 +26,7 @@ const itemVariants = {
 }
 
 const Links = ({setOpen}) => {
-    const items = ["Accueil", "Compétences", "Projets", "Contact"]
+    const items = ["Acceuil", "Compétences", "Projets", "Contact"]
 
     function replaceAccent(s){
         let r = s.toLowerCase();
